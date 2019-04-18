@@ -2,6 +2,10 @@
 
 ### Introduction
 
+Unofficial!
+
+Although now I am currently training the network, there may still be bugs in the code. 
+
 A replication of [Octave Convoltuion](https://arxiv.org/abs/1904.05049).
 
 Require TensorFlow 2.0 to run the code.
