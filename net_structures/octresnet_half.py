@@ -77,8 +77,8 @@ class ResNet(M.Model):
 		for i_blk, (num, chn) in enumerate(zip(blocknum_list, channel_list[1:])):
 			for i in range(num):
 				if i_blk==3:
-					# if i==0:
-					# 	self.body.append(M.OctSplit(oct_ratio))
+					if i==0:
+						self.body.append(M.OctSplit(oct_ratio))
 					blk = ResBlock_normal(chn, 1)
 				else:
 					blk = ResBlock_v1(chn, 2 if (i==0) else 1, oct_ratio)
@@ -96,6 +96,7 @@ class ResNet(M.Model):
 			x = self.c0(x)
 		for block in self.body:
 			x = block(x)
+		print(x.shape)
 		x = M.flatten(x)
 		x = self.emb_bn(x)
 		if tf.keras.backend.learning_phase():
