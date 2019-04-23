@@ -31,15 +31,15 @@ Remember to change registry if using Windows.
 
 ### How to Run
 
-No, you cannot straightly run it. 
+```
+1. Modify the data reader yourself.
 
-Firstly, you have to modify the data reader yourself.
+2. In 'train.py', modify line 22 to fit your data reader.
 
-Then, in 'train.py', you need to modify line 22 to fit your data reader.
+3. Modify the network initialization step in line 50 of 'train.py'. The parallel training needs it.
 
-Next, modify the network initialization step in line 50 of 'train.py'. The parallel training needs it.
-
-Now, there should be no problem.
+4. There should be no problem. Run 'train.py'
+```
 
 ### Notes
 
